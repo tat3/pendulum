@@ -1,0 +1,8 @@
+.stack-work/
+*~
+
+*.db
+*.db-shm
+*.db-wal
+
+*.cabal

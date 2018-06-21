@@ -1,0 +1,50 @@
+name:                pendulum
+version:             0.1.0.0
+github:              "tat3/pendulum"
+license:             BSD3
+author:              "tat"
+maintainer:          "example@example.com"
+copyright:           "2018 tat"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/tat3/pendulum#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- vector-space
+- gloss
+
+library:
+  source-dirs: src
+
+executables:
+  pendulum-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - pendulum
+
+tests:
+  pendulum-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - pendulum
